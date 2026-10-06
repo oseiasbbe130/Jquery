@@ -1,2 +1,3 @@
 Atividades Erik 
-Nome miqueias souza dos santos
+Nome: Oséias José da Silva Barros
+      Feliphe da Costa Gomes

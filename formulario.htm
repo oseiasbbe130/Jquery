@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <style>
+        .erro { color:red; font-size: 0.9em; display: none;}
+        .campo-erro { border: 1px solid red; }
+    </style>
+    <h2>Somar Dois Numeros</h2>
+
+    <label>Numero1:</label>
+    <input type="text" id="num1">
+    <br><br>
+
+    <label>Numero2:</label>
+    <input type="text" id="num2">
+    <br><br>
+
+    <button id="btnSomar">Calcular Soma</button>
+
+    <p id="msgErro" class="erro">Por FAVOR, insira apenas numeros!</p>
+
+    <h3>Resultado: <span id="resultado">0</span></h3>
+
+    <script>
+        $(document).ready(function() {
+            $('#btnSomar').click(function() {
+                let val1 = $('#num1').val().trim();
+                let val2 = $('#num2').val().trim();
+
+                if (val1 === "" || val2 === "" || isNaN(val1) || isNaN(val2)) {
+                    $('#msgErro').fadeIn();
+                    $('#num1, #num2').addClass('campo-erro');
+                    $('#resultado').text('0');
+                } else {
+                    $('#msgErro').fadeOut();
+                    $('#num1, #num2').removeClass('campo-erro');
+
+                    let soma = parseFloat(val1) + parseFloat(val2);
+
+                    $('#resultado').text(soma);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
